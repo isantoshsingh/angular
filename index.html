@@ -36,56 +36,17 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Home</a>
+                <a class="navbar-brand" href="/">Home</a>
             </div>
 
         </div>
         <!-- /.container -->
     </nav>
 
+        <!-- Page Content -->
+    <div class="container"  ng-app="listing">
     
-    <!-- Page Content -->
-    <div class="container" ng-app="listing" ng-controller="campaignCtrl">
-
-        <!-- Page Header -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Campaigns
-                    <small><input type="text" ng-model="search" ng-class="form-control" placeholder="search"></small>
-                </h1>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-            
-            <img id="spinner" ng-src="img/ajax-loader-snake.gif" ng-hide="isHide">
-            
-            <div class="bg-success" ng-repeat="obj in campaigns | filter: search">
-            <div class="col-md-3 portfolio-item">
-                <a href="#" ng-click="showCampaign(obj.url)">
-                    <img class="img-responsive img-thumbnail" ng-src="{{obj.image}}" alt="">
-                </a>
-                <h3>
-                    <a href="{{obj.url}}">{{obj.title}}</a>
-                </h3>
-                <h5>{{obj.name}}</h5>
-                
-                <div class="progress" style="margin-bottom: 0">
-                    <div class="progress-bar" role="progressbar" ng-style="{'width':obj.ratio +'%'}">
-                      <span class="sr-only">{{obj.ratio}}% Complete</span>
-                    </div>
-                  </div>
-                <h5>{{obj.sold}} sold towards a goal of {{obj.goal}}</h5>
-            </div>
-            </div>
-
-        </div>
-        <!-- /.row -->
-
-    
-    
+    <div ng-view></div>
     
         <hr>
         <!-- Footer -->
@@ -102,6 +63,7 @@
     <!-- /.container -->
 
     <script src= "app.js"></script>
+    <script src= "controllers.js"></script>
 </body>
 
 </html>
