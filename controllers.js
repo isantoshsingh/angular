@@ -13,12 +13,21 @@ campaignControllers.controller('campaignListCtrl', ['$scope', '$http',
     
 }]);
 
-campaignControllers.controller('campaignDetailCtrl', ['$scope', '$routeParams', '$http',
-  function($scope, $routeParams, $http) {
+campaignControllers.controller('campaignDetailCtrl', ['$scope', '$routeParams', '$http', '$sce',
+  function($scope, $routeParams, $http, $sce) {
+    $scope.isHide = false;
     
     $http.get("http://api.ang.local/rest/rest/campaign/url/" +  $routeParams.url)
     .success(function(response) {
-        $scope.campaigns = response;
+        $scope.isHide = true;
+
+        $scope.campaign = response;
+        document.title = $scope.campaign.title;
     });
+    
+    
+    $scope.renderHtml = function (htmlCode) {
+            return $sce.trustAsHtml(htmlCode);
+        };
     
 }]);

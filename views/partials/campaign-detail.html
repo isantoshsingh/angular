@@ -6,3 +6,42 @@
     </div>
 </div>
 <!-- /.row -->
+
+<img id="spinner" ng-src="img/ajax-loader-snake.gif" ng-hide="isHide">
+
+<div class="row">
+    <div class="col-lg-4">
+
+        <div class="row">
+            <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                <div class="thumbnail-img">
+                    <div class="overflow-hidden">
+                            <img class="img-responsive img-thumbnail" ng-src="{{campaign.image}}" alt="">
+                    </div>						
+                </div>										
+            </div>
+        </div>
+
+        <div class="row" style="overflow: hidden;">
+            <div class=" pull-left" ng-repeat="img in campaign.thumbs" style="width: 15%;">
+            <img ng-src="{{img}}" class="img-thumbnail" />
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-lg-8">
+        <div class="row">
+            <div ng-bind-html="renderHtml(campaign.description)"></div>
+            
+        </div>
+
+        <div class="row">
+            <dl>
+              <dt>Styles</dt>
+              <dd ng-repeat="product in campaign.products">{{product.name + " - Rs." + product.price}}</dd>
+            </dl>
+            
+        </div>
+    </div>
+</div>
