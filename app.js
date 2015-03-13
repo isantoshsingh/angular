@@ -3,8 +3,8 @@
 var app = angular.module("listing", ['ngRoute', 'campaignControllers']);
 
 
-app.config(['$routeProvider',
-  function($routeProvider) {
+app.config(['$routeProvider', '$locationProvider',
+  function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/', {
         templateUrl: 'views/partials/campaign-list.html',
@@ -16,5 +16,5 @@ app.config(['$routeProvider',
       });
       
       //to remove # from url
-      //$locationProvider.html5Mode({ enabled: true, requireBase: false});
+      $locationProvider.html5Mode({ enabled: true, requireBase: false});
   }]);

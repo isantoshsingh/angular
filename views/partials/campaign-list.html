@@ -16,11 +16,11 @@
             
             <div class="bg-success" ng-repeat="obj in campaigns | filter: search">
             <div class="col-md-3 portfolio-item">
-                <a href="#/{{obj.url}}">
+                <a href="{{obj.url}}">
                     <img class="img-responsive img-thumbnail" ng-src="{{obj.image}}" alt="">
                 </a>
                 <h3>
-                    <a href="#/{{obj.url}}">{{obj.title}}</a>
+                    <a href="{{obj.url}}">{{obj.title}}</a>
                 </h3>
                 <h5>{{obj.name}}</h5>
                 
