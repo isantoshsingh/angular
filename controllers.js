@@ -1,4 +1,4 @@
-
+'use strict';
 
 var campaignControllers = angular.module('campaignControllers', []);
 
@@ -25,6 +25,9 @@ campaignControllers.controller('campaignDetailCtrl', ['$scope', '$routeParams', 
         document.title = $scope.campaign.title;
     });
     
+    $scope.setImage = function(imageUrl) {
+      $scope.campaign.image = imageUrl;
+    }
     
     $scope.renderHtml = function (htmlCode) {
             return $sce.trustAsHtml(htmlCode);
